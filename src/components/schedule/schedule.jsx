@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import styles from './schedule.module.css'
 
 const Schedule = (props) => {
 
@@ -21,22 +22,22 @@ const Schedule = (props) => {
 
     const handleHoraSeleccionada = (hora) => {
         setHoraSeleccionada(hora);
-        props.scheduleSelection(hora)
+        props.scheduleSelection(horas.date, hora)
     };
 
     return(
-        <div>
+        <div className={styles.scheduleList}>
             <h2>Available Schedule</h2>
             <p>{horas.date}</p>
-            <ul>
+            <ul >
                 {horas.availableTimeslots?.map((hora, index) => (
-                    <li key={index} >
+                    <li key={index} className={styles.timeSlot}>
                         <span onClick={() => handleHoraSeleccionada(hora)}>{hora}</span>
                     </li>
                 ))}
             </ul>
-            <button onClick={props.onBack}>Atrás</button>
-            {horaSeleccionada && <button onClick={props.onContinue}>Siguiente</button>}
+            <button  className={styles.navButton} onClick={props.onBack}>Atrás</button>
+            {horaSeleccionada && <button className={styles.navButton} onClick={props.onContinue}>Siguiente</button>}
         </div>
     )
    

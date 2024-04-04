@@ -1,0 +1,46 @@
+.scheduleList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .timeSlot {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .timeSlot:hover {
+    background-color: #f0f0f0; /* efecto hover */
+  }
+  
+  .timeSlot.selected {
+    background-color: #4CAF50; /* verde cuando está seleccionado */
+    color: white;
+  }
+  
+  /* Estilos para los botones de navegación */
+  .navButton {
+    background-color: #4CAF50; /* verde */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  }
+  
+  .navButton:hover {
+    background-color: #45a049; /* verde oscuro para hover */
+  }
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    /* Adaptaciones para dispositivos móviles */
+  }

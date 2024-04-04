@@ -1,0 +1,17 @@
+/* Estilos generales de la confirmación */
+.confirmationContainer {
+    /* Contenedor general de confirmación */
+  }
+  
+  .selectedServiceItem {
+    /* Estilos para cada servicio seleccionado */
+  }
+  
+  .confirmButton {
+    /* Estilos para el botón de confirmar */
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    /* Adaptaciones para dispositivos móviles */
+  }

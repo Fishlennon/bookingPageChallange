@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import styles from './services.module.css'
+
 
 const Services = (props) => {
 
@@ -38,22 +40,22 @@ const selectService = (servicio) => {
 
 
 return(
-    <div>
+    <div >
          <h2>Categories</h2>
-         <ul>
+         <ul className={styles.serviceList}>
             {servicios.map(servicio =>(
-                <li key={servicio.id}>
+                <li key={servicio.id} className={styles.serviceItem}>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <h3>{servicio.name}</h3>
-                            <button onClick={() => mostrarDetalles(servicio.id)}>
+                            <button onClick={() => mostrarDetalles(servicio.id)} className={styles.detailButton}>
                                 {detalles[servicio.id] ? '-' : '+'}
                             </button>
                         </div>
                         {detalles[servicio.id] && (
-                            <div>
+                            <div className={styles.serviceItemDetails}>
                                 <p>Category: {servicio.category}</p>
                                 <p>{servicio.description}</p>
-                                <button onClick={() => selectService(servicio)}>
+                                <button onClick={() => selectService(servicio)} className={styles.detailButton}>
                                 {seleccionados.find(s => s.id === servicio.id) ? 'Deselect' : 'Select'}
                                 </button>
                             </div>
@@ -61,7 +63,7 @@ return(
                 </li>
             ))}
          </ul>
-         {seleccionados.length > 0 && <button onClick={props.onContinue}>Siguiente</button>}
+         {seleccionados.length > 0 && <button className={styles.continueButton} onClick={props.onContinue}>Siguiente</button>}
     </div>
     )
 }
