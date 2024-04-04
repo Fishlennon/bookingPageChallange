@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const Services = () => {
+const Services = (props) => {
 
     const [servicios, setServicios] = useState([]);
     const [detalles, setDetalles] = useState([]);
+    const [seleccionados, setSeleccionados] = useState([]);
 
     useEffect(() =>{
         axios.get(`/services.json`)
@@ -25,13 +26,20 @@ const mostrarDetalles = (id) => {
     }))
 }
 
-
-
+const selectService = (servicio) => {
+    const yaSeleccionado = seleccionados.find(seleccion => seleccion.id === servicio.id);
+    if (yaSeleccionado) {
+        setSeleccionados(seleccionados.filter(seleccion => seleccion.id !== servicio.id));
+    } else {
+        setSeleccionados([...seleccionados, servicio]);
+    }
+    props.FinalSelectedServices(servicio)
+  };
 
 
 return(
     <div>
-         <h2>Categorias</h2>
+         <h2>Categories</h2>
          <ul>
             {servicios.map(servicio =>(
                 <li key={servicio.id}>
@@ -43,13 +51,17 @@ return(
                         </div>
                         {detalles[servicio.id] && (
                             <div>
+                                <p>Category: {servicio.category}</p>
                                 <p>{servicio.description}</p>
-                                <button>Seleccionar</button>
+                                <button onClick={() => selectService(servicio)}>
+                                {seleccionados.find(s => s.id === servicio.id) ? 'Deselect' : 'Select'}
+                                </button>
                             </div>
                         )}
                 </li>
             ))}
          </ul>
+         {seleccionados.length > 0 && <button onClick={props.onContinue}>Siguiente</button>}
     </div>
     )
 }
