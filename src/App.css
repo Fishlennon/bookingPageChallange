@@ -35,6 +35,9 @@
 .progress-bar-filled.step-3 {
   width: 75%;
 }
+.progress-bar-filled.step-4 {
+  width: 100%;
+}
 
 .next-button-container {
   position: fixed; /* Fija el contenedor de los botones en la parte superior */

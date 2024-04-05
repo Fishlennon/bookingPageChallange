@@ -2,6 +2,7 @@ import  { useState } from 'react';
 import Services from './components/services/services';
 import Schedule from './components/schedule/schedule';
 import Confirmation from './components/confirmation/confirmation';
+import Reserved from './components/reserved/reserved';
 
 import './App.css';
 
@@ -16,6 +17,9 @@ const App = () => {
 
   const prevStep = () => {
     setStep(step - 1);
+  };
+  const resetStep = () => {
+    setStep(1);
   };
 
   const handleFinalSelectedServices = (service) => {
@@ -61,6 +65,12 @@ const App = () => {
           FinalSelectedServices={FinalSelectedServices}
           schedule={schedule}
           onBack={prevStep}
+          onContinue={nextStep}
+        />
+      )}
+      {step === 4 && (
+        <Reserved
+          reset={resetStep}
         />
       )}
     </div>
