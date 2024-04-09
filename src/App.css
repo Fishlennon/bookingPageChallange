@@ -89,8 +89,8 @@
 
   .progress-bar,
   .progress-text {
-    top: 4%; /* Ajusta el porcentaje de acuerdo a tus necesidades */
-    width: calc(100% - 20px); /* Reducir el padding total */
+    top: 4%; 
+    width: calc(100% - 20px); 
     max-width: 94%;
   }
 

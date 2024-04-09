@@ -83,11 +83,11 @@
 @media (max-width: 768px) {
  
   .serviceItem {
-    padding: 10px 5px; /* Reducir el padding */
+    padding: 10px 5px; 
   }
 
   .serviceItemDetails {
-    padding: 10px 5px; /* Reducir el padding */
+    padding: 10px 5px;
   }
 
 }
