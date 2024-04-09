@@ -27,17 +27,21 @@ const Schedule = (props) => {
 
     return(
         <div className={styles.scheduleList}>
-            <h2>Available Schedule</h2>
-            <p>{horas.date}</p>
+            <h2 className={styles.h2}>Available Schedule</h2>
+            <p  className={styles.h2}>{horas.date}</p>
             <ul >
                 {horas.availableTimeslots?.map((hora, index) => (
-                    <li key={index} className={styles.timeSlot}>
-                        <span onClick={() => handleHoraSeleccionada(hora)}>{hora}</span>
+                    <li key={index} 
+                    className={hora === horaSeleccionada ? styles.selected : ''}
+                    onClick={() => handleHoraSeleccionada(hora)}>
+                        <span>{hora}</span>
                     </li>
                 ))}
             </ul>
-            <button  className={styles.navButton} onClick={props.onBack}>Atrás</button>
-            {horaSeleccionada && <button className={styles.navButton} onClick={props.onContinue}>Siguiente</button>}
+            <div className={styles.buttonContainer}>
+                <button  className={styles.navButton} onClick={props.onBack}>Atrás</button>
+                {horaSeleccionada && <button className={styles.navButton} onClick={props.onContinue}>Siguiente</button>}
+            </div>
         </div>
     )
    

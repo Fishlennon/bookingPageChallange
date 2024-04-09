@@ -47,6 +47,12 @@ const App = () => {
       <div className="progress-bar">
         <div className={`progress-bar-filled step-${step}`} />
       </div>
+      <div className="progress-text">
+      {step === 1 && "Choose Service"}
+      {step === 2 && "Schedule"}
+      {step === 3 && "Confirm"}
+      {step === 4 && "Confirmed"}
+    </div>
       {step === 1 && (
         <Services
           FinalSelectedServices={handleFinalSelectedServices}

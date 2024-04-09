@@ -40,14 +40,14 @@ const selectService = (servicio) => {
 
 
 return(
-    <div >
-         <h2>Categories</h2>
+    <div className={styles.container}>
+         <h2 className={styles.h2}>Categories</h2>
          <ul className={styles.serviceList}>
             {servicios.map(servicio =>(
                 <li key={servicio.id} className={styles.serviceItem}>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <h3>{servicio.name}</h3>
-                            <button onClick={() => mostrarDetalles(servicio.id)} className={styles.detailButton}>
+                            <button  onClick={() => mostrarDetalles(servicio.id)} className={styles.detailButton}>
                                 {detalles[servicio.id] ? '-' : '+'}
                             </button>
                         </div>
@@ -63,7 +63,9 @@ return(
                 </li>
             ))}
          </ul>
-         {seleccionados.length > 0 && <button className={styles.continueButton} onClick={props.onContinue}>Siguiente</button>}
+         <div className={styles.buttonContainer}>
+            {seleccionados.length > 0 && <button className={styles.continueButton} onClick={props.onContinue}>Siguiente</button>}
+         </div>
     </div>
     )
 }

@@ -1,8 +1,4 @@
-.container {
-  border: 1px solid #ccc;
   
-}
-
   .buttonContainer {
     display: flex;
     position: fixed;
@@ -27,23 +23,15 @@
   }
   
   .navButton:hover {
-    background-color: #4b5c6b;  
+    background-color: #4b5c6b; 
   }
-
-  .h2 {
-    text-align: center;
-    font-size: 24px; 
-    color: #222d36; 
-    background-color: #f9f9f9; 
-    padding: 10px; 
-    border-radius: 5px; 
-    margin-bottom: 20px; 
-    list-style-type: none;
-  }
-  
-
-  
-
+ 
   @media (max-width: 768px) {
 
-  }
+    .buttonContainer {
+        bottom: 3%;
+        left: 0;
+        right: 0;
+        justify-content: center;
+    }
+}

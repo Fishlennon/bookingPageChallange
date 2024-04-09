@@ -2,30 +2,60 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+    border: 1px solid #ccc;
+  }
+
+  .scheduleList ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
   }
   
-  .timeSlot {
-    background-color: #fff;
+  .scheduleList ul li {
+    background-color: #c3cfd9;
     border: 1px solid #ddd;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px;
+    width: calc(33.33% - 20px); 
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
-  .timeSlot:hover {
-    background-color: #f0f0f0; /* efecto hover */
+  .scheduleList ul li:hover {
+    background-color: #f0f0f0; 
   }
   
-  .timeSlot.selected {
-    background-color: #4CAF50; /* verde cuando está seleccionado */
+  .scheduleList ul li.selected {
+    background-color: #4b5c6b; 
     color: white;
   }
   
-  /* Estilos para los botones de navegación */
+  .h2 {
+    text-align: center;
+    font-size: 24px; 
+    color: #222d36; 
+    background-color: #f9f9f9; 
+    padding: 10px; 
+    border-radius: 5px; 
+    margin-bottom: 20px; 
+    list-style-type: none;
+    
+  }
+  .buttonContainer {
+    display: flex;
+    position: fixed;
+    bottom: 6%;
+    left: 42%;
+    z-index: auto;
+    justify-content: space-between;
+  }
+
   .navButton {
-    background-color: #4CAF50; /* verde */
-  color: white;
+    background-color: #54738f;
+    color: #e6dfdf;
   border: none;
   padding: 10px 20px;
   text-align: center;
@@ -38,9 +68,15 @@
   }
   
   .navButton:hover {
-    background-color: #45a049; /* verde oscuro para hover */
+    background-color: #4b5c6b; 
   }
-  /* Estilos responsivos */
+ 
   @media (max-width: 768px) {
-    /* Adaptaciones para dispositivos móviles */
-  }
+
+    .buttonContainer {
+        bottom: 3%;
+        left: 0;
+        right: 0;
+        justify-content: center;
+    }
+}

@@ -1,42 +1,69 @@
+.container {
+  border: 1px solid #ccc;
+  
+}
+
+.h2 {
+  text-align: center;
+  font-size: 24px; 
+  color: #222d36; 
+  background-color: #f9f9f9; 
+  padding: 10px; 
+  border-radius: 5px; 
+  margin-bottom: 20px; 
+  list-style-type: none;
+}
 .serviceList {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  
 }
 
 .serviceItem {
-  background-color: #fff; /* fondo blanco */
-  border-bottom: 1px solid #eee; /* separación gris */
+  background-color: #fff; 
+  border-bottom: 1px solid #eee; 
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  
 }
 
 .serviceItem:nth-child(even) {
-  background-color: #f9f9f9; /* fondo gris para elementos pares */
+  background-color: #f9f9f9; 
 }
 
 .serviceItem:hover {
-  background-color: #f0f0f0; /* efecto hover */
+  background-color: #f0f0f0; 
 }
 
 .serviceItemDetails {
   margin: 10px 0;
-  background-color: #f8f8f8; /* fondo para los detalles */
+  background-color: #f8f8f8; 
   padding: 10px;
   border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .detailButton {
   margin-left: 10px;
   cursor: pointer;
-  /* Estilos adicionales para el botón de detalles */
+
 }
 
-/* Estilos para el botón de continuar */
+.buttonContainer {
+  display: flex;
+  position: fixed;
+  bottom: 6%;
+  left: 50%;
+  z-index: auto;
+  justify-content: space-between;
+}
+
+
 .continueButton {
-  background-color: #4CAF50; /* verde */
-  color: white;
+  background-color: #54738f;
+  color: #e6dfdf;
   border: none;
   padding: 10px 20px;
   text-align: center;
@@ -49,10 +76,18 @@
 }
 
 .continueButton:hover {
-  background-color: #45a049; /* verde oscuro para hover */
+  background-color: #4b5c6b; 
 }
 
-/* Estilos responsivos */
+
 @media (max-width: 768px) {
-  /* Adaptaciones para dispositivos móviles */
+ 
+  .serviceItem {
+    padding: 10px 5px; /* Reducir el padding */
+  }
+
+  .serviceItemDetails {
+    padding: 10px 5px; /* Reducir el padding */
+  }
+
 }

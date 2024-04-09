@@ -1,8 +1,12 @@
 .container {
   max-width: 600px;
+  max-width: 50%;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc; /* Agregar un borde sólido de 1px con color gris claro */
+  padding-top: 10%;
+  padding-bottom: 6%;
+  
+  
 }
 
 .progress-bar {
@@ -11,11 +15,12 @@
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 20px;
-  position: fixed; /* Fija la barra de progreso en la parte superior */
-  top: 20px; /* Alinea la barra de progreso 20px debajo del borde superior */
-  width: calc(100% - 40px); /* Establece el ancho al 100% menos el margen izquierdo y derecho */
-  left: 50%; /* Centra horizontalmente la barra de progreso */
-  transform: translateX(-50%); /* Corrige la posición para centrarla */
+  position: fixed;
+  top: 8%;
+  width: calc(100% - 40px);
+  max-width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .progress-bar-filled {
@@ -38,13 +43,23 @@
 .progress-bar-filled.step-4 {
   width: 100%;
 }
+.progress-text {
+  position: fixed;
+  top: 5%; 
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
 
 .next-button-container {
-  position: fixed; /* Fija el contenedor de los botones en la parte superior */
-  bottom: 20px; /* Ajusta la posición vertical */
-  width: 100%; /* Establece la anchura al 100% */
-  display: flex; /* Usa flexbox para alinear los botones */
-  justify-content: space-between; /* Alinea los botones al espacio entre ellos */
+  position: fixed; 
+  bottom: 20px; 
+  width: 100%;
+  display: flex; 
+  justify-content: space-between; 
 }
 
 .next-button {
@@ -63,4 +78,20 @@
 
 .next-button:hover {
   background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 10px;
+    padding-top: 10%;
+  }
+
+  .progress-bar,
+  .progress-text {
+    top: 4%; /* Ajusta el porcentaje de acuerdo a tus necesidades */
+    width: calc(100% - 20px); /* Reducir el padding total */
+    max-width: 94%;
+  }
+
 }
