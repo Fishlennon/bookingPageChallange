@@ -12,7 +12,7 @@ const handleConfirm = () => {
             <h2 className={styles.h2} >Selected services:</h2>
                 <ul className={styles.h2}>
                     {props.FinalSelectedServices.map((service, index) => (
-                        <li key={index}>{service}</li>
+                        <li  key={index}>{service}</li>
                     ))}
                 </ul>
             <h2 className={styles.h2} >Date: {props.schedule[0]} </h2>

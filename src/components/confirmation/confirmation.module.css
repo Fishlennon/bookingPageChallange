@@ -2,6 +2,10 @@
   border: 1px solid #ccc;
   
 }
+.li {
+  border: 1px solid #ccc;
+  list-style-type: none;
+}
 
   .buttonContainer {
     display: flex;
@@ -38,7 +42,9 @@
     padding: 10px; 
     border-radius: 5px; 
     margin-bottom: 20px; 
+    border: 1px solid #ccc;
     list-style-type: none;
+   
   }
   
 
